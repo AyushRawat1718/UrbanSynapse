@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Synapse</title>
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-slate-300">
+        <div
+            id="navbar"
+            class="w-full h-12 bg-slate-600 flex justify-between items-center px-6">
+            <div class="text-white text-xl font-bold">Urban Synapse</div>
+            <button
+                id="login_b"
+                class="bg-yellow-200 text-black rounded-lg p-2 block w-[140px] text-sm"
+                onclick="window.location.href='/login';">
+                Logout
+            </button>
+        </div>
+        <div class = "flex justify-center">
+            <div id="userProfile" class="flex items-center justify-center bg-">
+                <!-- User Details Section -->
+                <div
+                    id="userDetails"
+                    class="h-64 bg-[#E8DADA] m-8 w-96 flex flex-col justify-center p-6 rounded-3xl">
+                    <h2 class="text-xl font-bold mb-4">Username: <%= user_id %></h2>
+                    <hr class="border-0 h-0.5 bg-black" />
+                    <p class="text-gray-700 mb-2">First Name: <%= F_Name %></p>
+                    <hr />
+                    <p class="text-gray-700 mb-2">Last Name: <%= L_Name %></p>
+                    <hr />
+                    <p class="text-gray-700 mb-2">Email Id: <%= email %></p>
+                    <hr />
+                    <p class="text-gray-700 mb-2">Contact Number: <%= phone %></p>
+                    <hr />
+                    <p class="text-gray-700 mb-2">Department: <%= dept %></p>
+                </div>
+    
+                <!-- User Image Section -->
+                <div id="userImage">
+                    <img class="h-60 rounded-full" src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="User Image">
+                </div>
+            </div>
+
+            <div class = "">
+                Start 
+            </div>
+        </div>
+        
+        <hr/>
+        <!-- Projects Section -->
+        <div id="projects" class="m-8">
+            <% if (projects.length > 0) { %>
+                <% projects.forEach(function(project) { %>
+                    <div class="bg-white p-4 mb-4 rounded-lg shadow-md border-4 
+                        <% if (project.status === 'buffer') { %> border-blue-500
+                        <% } else if (project.status === 'completed') { %> border-red-500
+                        <% } else if (project.status === 'working') { %> border-green-500
+                        <% } else { %> border-gray-500
+                        <% } %>">
+                        <h3 class="text-lg font-bold mb-2"><%= project.title %></h3>
+                        <p class="text-gray-700 mb-2">Description: <%= project.description %></p>
+                        <p class="text-gray-700 mb-2">Status: <%= project.status %></p>
+                        <!-- Add more project details as needed -->
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p class="text-gray-700">No projects available</p>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="javascripts/index.js"></script>
+</body>
+</html>

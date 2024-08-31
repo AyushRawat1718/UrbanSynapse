@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #cce7ff; 
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+        .small-input {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8">REGISTRATION</h1>
+        <form action="/submit" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="mb-6">
+                <label for="projectId" class="block text-gray-700 font-bold mb-2">Project ID</label>
+                <input type="text" id="projectId" name="projectId" class="small-input px-3 py-2 border rounded-lg" placeholder="Enter Project ID" required>
+            </div>
+
+            <div class="mb-6">
+                <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
+                <textarea id="description" name="description" class="small-input px-3 py-2 border rounded-lg" placeholder="Describe your project..." required></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label for="department" class="block text-gray-700 font-bold mb-2">Department</label>
+                <select id="department" name="department" class="small-input px-3 py-2 border rounded-lg" required>
+                    <option value="Municipal Corporation">Municipal Corporation</option>
+                    <option value="Road Department">Road Department</option>
+                    <option value="Water Department">Water Department</option>
+                    <option value="Sewer Department">Sewer Department</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="location" class="block text-gray-700 font-bold mb-2">Location of Project</label>
+                <div id="map"></div>
+                <input type="hidden" id="location" name="location">
+            </div>
+
+            <div class="mb-6">
+                <label for="resources" class="block text-gray-700 font-bold mb-2">Resources Allocated</label>
+                <input type="text" id="resources" name="resources" class="small-input px-3 py-2 border rounded-lg" placeholder="Specify allocated resources..." required>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg">Register</button>
+        </form>
+    </div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

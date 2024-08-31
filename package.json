@@ -1,0 +1,22 @@
+{
+  "name": "new_urbansynapse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "code": "npx nodemon script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0",
+    "new_urbansynapse": "file:",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "tailwindcss": "^3.4.10"
+  }
+}
